@@ -6,10 +6,6 @@
 	--cl-light-emphasis: hsl(var(--base-hue), 25%, 95%);
 }
 
-#root {
-	width: 100%;
-}
-
 main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
