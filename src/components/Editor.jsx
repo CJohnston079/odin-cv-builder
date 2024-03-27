@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Field({ inputLabel, inputName }) {
 	return (
 		<label>
@@ -6,6 +8,11 @@ function Field({ inputLabel, inputName }) {
 		</label>
 	);
 }
+
+Field.propTypes = {
+	inputLabel: PropTypes.string.isRequired,
+	inputName: PropTypes.string.isRequired,
+};
 
 function Fieldset({ heading, fields }) {
 	const fieldElements = fields.map(field => {
@@ -19,6 +26,16 @@ function Fieldset({ heading, fields }) {
 		</fieldset>
 	);
 }
+
+Fieldset.propTypes = {
+	heading: PropTypes.string.isRequired,
+	fields: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+		})
+	).isRequired,
+};
 
 export default function Editor() {
 	const inputs = {
