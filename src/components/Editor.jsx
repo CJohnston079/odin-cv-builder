@@ -1,4 +1,4 @@
-function Editor() {
+export default function Editor() {
 	return (
 		<section id="editor">
 			<form>
@@ -44,5 +44,3 @@ function Editor() {
 		</section>
 	);
 }
-
-export default Editor;
