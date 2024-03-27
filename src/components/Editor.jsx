@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import inputs from "../data/inputs";
 
 function Field({ inputLabel, inputName }) {
 	return (
@@ -38,20 +39,6 @@ Fieldset.propTypes = {
 };
 
 export default function Editor() {
-	const inputs = {
-		contact: [
-			{ label: "First name", name: "forename" },
-			{ label: "Surname", name: "surname" },
-			{ label: "Email address", name: "email" },
-			{ label: "Phone number", name: "phone-number" },
-		],
-		links: [
-			{ label: "Website", name: "website" },
-			{ label: "LinkedIn", name: "linkedin" },
-		],
-		summary: [{ label: "Professional summary", name: "summary" }],
-	};
-
 	return (
 		<section id="editor">
 			<form>
