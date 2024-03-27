@@ -1,7 +1,12 @@
+:root {
+	--base-hue: 220;
+
+	--cl-preview-bg-light: hsl(var(--base-hue), 30%, 60%);
+	--cl-preview-bg-dark: hsl(var(--base-hue), 30%, 40%);
+	--cl-light-emphasis: hsl(var(--base-hue), 25%, 95%);
+}
+
 #root {
-	/* max-width: 1280px; */
-	/* margin: 0 auto; */
-	/* padding: 2rem; */
 	width: 100%;
 }
 
@@ -11,10 +16,13 @@ main {
 }
 
 #preview-pane {
+	position: fixed;
+	right: 0;
 	height: 100vh;
 	width: 50vw;
 
-	background-color: lightblue;
+	background: linear-gradient(205deg, var(--cl-preview-bg-light), var(--cl-preview-bg-dark));
+	box-shadow: inset 0.5rem 0 1rem -0.5rem hsl(0, 0%, 0%, 0.6);
 }
 
 h2 {
@@ -47,5 +55,5 @@ input {
 
 	font-size: 1rem;
 
-	background-color: hsl(0, 0%, 95%);
+	background-color: var(--cl-light-emphasis);
 }
