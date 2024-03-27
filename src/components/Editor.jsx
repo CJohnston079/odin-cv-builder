@@ -1,8 +1,8 @@
 function Editor() {
 	return (
-		<section>
+		<section id="editor">
 			<form>
-				<fieldset id="editor">
+				<fieldset>
 					<h2>Contact information</h2>
 					<label>
 						First name:
