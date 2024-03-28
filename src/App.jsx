@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import Editor from "./components/Editor";
 import PreviewPane from "./components/PreviewPane";
 
