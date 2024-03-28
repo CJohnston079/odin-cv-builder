@@ -3,45 +3,43 @@ main {
 	grid-template-columns: 1fr 1fr;
 }
 
-#preview-pane {
-	position: fixed;
-	right: 0;
-	height: 100vh;
-	width: 50vw;
-
-	background: linear-gradient(205deg, var(--cl-preview-bg-light), var(--cl-preview-bg-dark));
-	box-shadow: inset 0.5rem 0 1rem -0.5rem hsl(0, 0%, 0%, 0.6);
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+a:hover {
+	color: #535bf2;
 }
 
-h2 {
+body {
 	margin: 0;
-	margin-bottom: 1rem;
-	font-size: 1.2rem;
+	/* display: flex; */
+	/* place-items: center; */
+	min-width: 320px;
+	min-height: 100vh;
 }
 
-fieldset {
-	margin: 1rem;
-	border: solid hsl(0, 0%, 90%) 1px;
-	border-radius: 4px;
-	padding: 1rem;
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
 }
 
-label {
-	display: grid;
-
-	font-size: 0.8rem;
-	color: hsl(0, 0%, 50%);
-
-	margin: 0.5em auto;
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	transition: border-color 0.25s;
 }
-
-input {
-	margin: 0.5rem 0;
-	border: none;
-	border-radius: 2px;
-	padding: 0.5rem;
-
-	font-size: 1rem;
-
-	background-color: var(--cl-light-emphasis);
+button:hover {
+	border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
 }

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../styles/editor/Field.css";
 
 export default function Field({ inputLabel, inputName }) {
 	return (

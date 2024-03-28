@@ -1,5 +1,6 @@
 import Field from "./Field";
 import PropTypes from "prop-types";
+import "../styles/editor/Fieldset.css";
 
 export default function Fieldset({ heading, fields }) {
 	const fieldElements = fields.map(field => {
