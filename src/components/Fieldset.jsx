@@ -1,5 +1,6 @@
-import Field from "./Field";
 import PropTypes from "prop-types";
+import Field from "./Field";
+import FieldsetHeader from "./FieldsetHeader";
 import "../styles/editor/Fieldset.css";
 
 export default function Fieldset({ heading, fields }) {
@@ -9,7 +10,7 @@ export default function Fieldset({ heading, fields }) {
 
 	return (
 		<fieldset>
-			<h2>{heading}</h2>
+			<FieldsetHeader headerText={heading} />
 			{fieldElements}
 		</fieldset>
 	);
