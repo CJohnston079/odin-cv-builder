@@ -1,7 +1,13 @@
 import PropTypes from "prop-types";
+import "../styles/editor/FieldsetHeader.css";
 
 export default function FieldsetHeader({ headerText }) {
-	return <h2>{headerText}</h2>;
+	return (
+		<div className="section-header">
+			<h2>{headerText}</h2>
+			<button>+</button>
+		</div>
+	);
 }
 
 FieldsetHeader.propTypes = {

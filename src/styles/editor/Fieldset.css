@@ -2,20 +2,10 @@
 	--cl-text: hsl(0, 0%, 20%);
 }
 
-h2 {
-	margin: 0;
-	margin-bottom: 1rem;
-
-	font-size: 0.8rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-	color: var(--cl-text);
-}
-
 fieldset {
 	margin: 1rem;
 	border: none;
-	border-top: solid var(--cl-text) 1.5px;
+	border-top: solid var(--cl-text) 1px;
 	padding: 0rem;
 	padding-top: 0.5rem;
 }
