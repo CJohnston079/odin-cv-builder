@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import "../styles/editor/FieldsetHeader.css";
 
-export default function FieldsetHeader({ headerText, onShow }) {
+export default function FieldsetHeader({ headerText, isActive, onShow }) {
 	return (
 		<div className="section-header">
 			<h2>{headerText}</h2>
 			<button type="button" onClick={onShow}>
-				+
+				{isActive ? "-" : "+"}
 			</button>
 		</div>
 	);
@@ -14,6 +14,7 @@ export default function FieldsetHeader({ headerText, onShow }) {
 
 FieldsetHeader.propTypes = {
 	headerText: PropTypes.string.isRequired,
+	isActive: PropTypes.bool.isRequired,
 	onShow: PropTypes.func.isRequired,
 };
 

@@ -10,7 +10,7 @@ export default function Fieldset({ heading, fields, isActive, onShow }) {
 
 	return (
 		<fieldset>
-			<FieldsetHeader headerText={heading} onShow={onShow} />
+			<FieldsetHeader headerText={heading} isActive={isActive} onShow={onShow} />
 			{isActive ? fieldElements : undefined}
 		</fieldset>
 	);
