@@ -3,15 +3,15 @@ import Field from "./Field";
 import FieldsetHeader from "./FieldsetHeader";
 import "../styles/editor/Fieldset.css";
 
-export default function Fieldset({ heading, fields }) {
+export default function Fieldset({ heading, fields, isActive, onShow }) {
 	const fieldElements = fields.map(field => {
 		return <Field key={field.name} inputLabel={field.label} inputName={field.name} />;
 	});
 
 	return (
 		<fieldset>
-			<FieldsetHeader headerText={heading} />
-			{fieldElements}
+			<FieldsetHeader headerText={heading} onShow={onShow} />
+			{isActive ? fieldElements : undefined}
 		</fieldset>
 	);
 }
@@ -24,4 +24,6 @@ Fieldset.propTypes = {
 			name: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	isActive: PropTypes.bool.isRequired,
+	onShow: PropTypes.func.isRequired,
 };
