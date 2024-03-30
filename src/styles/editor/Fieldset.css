@@ -3,9 +3,7 @@
 }
 
 fieldset {
-	margin: 1rem;
 	border: none;
-	border-top: solid var(--cl-text) 1px;
-	padding: 0rem;
-	padding-top: 0.5rem;
+	border-top: solid hsl(0, 0%, 80%) 1px;
+	padding: 0.5rem 0;
 }

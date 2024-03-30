@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Fieldset from "./Fieldset";
 import inputs from "../data/inputs";
+import "../styles/editor/Editor.css";
 
 export default function Editor() {
 	const [activeFieldset, setActiveFieldset] = useState(0);
