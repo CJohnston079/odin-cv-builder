@@ -10,7 +10,7 @@ export default function FieldsetHeader({ headerText, isActive, onShow }) {
 				onClick={onShow}
 				style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)" }}
 			>
-				^
+				<img src="./src/assets/icons/chevron.svg" alt="" />
 			</button>
 		</div>
 	);
