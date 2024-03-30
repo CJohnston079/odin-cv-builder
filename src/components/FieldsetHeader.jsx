@@ -5,12 +5,13 @@ export default function FieldsetHeader({ headerText, isActive, onShow }) {
 	return (
 		<div className="section-header">
 			<h2>{headerText}</h2>
-			<button
-				type="button"
-				onClick={onShow}
-				style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)" }}
-			>
-				<img src="./src/assets/icons/chevron.svg" alt="" />
+			<button type="button" onClick={onShow}>
+				<img
+					src="./src/assets/icons/chevron.svg"
+					alt={!isActive ? "Expand section" : undefined}
+					title={!isActive ? "Expand section" : undefined}
+					style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)" }}
+				/>
 			</button>
 		</div>
 	);
