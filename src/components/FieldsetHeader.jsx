@@ -3,10 +3,10 @@ import "../styles/editor/FieldsetHeader.css";
 
 export default function FieldsetHeader({ headerText, iconSrc, isActive, onShow }) {
 	return (
-		<div className="section-header">
+		<div className="section-header" onClick={onShow}>
 			<img src={iconSrc} />
 			<h2>{headerText}</h2>
-			<button type="button" onClick={onShow}>
+			<button type="button">
 				<img
 					src="./src/assets/icons/chevron.svg"
 					alt={!isActive ? "Expand section" : undefined}
