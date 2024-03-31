@@ -10,4 +10,5 @@ export default {
 		{ label: "LinkedIn", name: "linkedin" },
 	],
 	summary: [{ label: "Professional summary", name: "summary" }],
+	sample: [{ label: "Sammple field", name: "sample" }],
 };
