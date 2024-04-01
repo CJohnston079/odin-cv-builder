@@ -36,7 +36,14 @@ button {
 
 input,
 textarea {
+	outline: solid transparent 2px;
 	font-family: "Open Sans", sans-serif;
+
+	transition: outline-color 400ms;
+}
+input:focus-visible,
+textarea:focus-visible {
+	outline: solid hsl(var(--base-hue), 50%, 50%) 2px;
 }
 
 textarea {
