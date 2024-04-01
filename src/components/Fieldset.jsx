@@ -18,7 +18,7 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 	});
 
 	return (
-		<fieldset>
+		<fieldset id={heading.toLowerCase().replaceAll(" ", "-")}>
 			<FieldsetHeader headerText={heading} iconSrc={iconSrc} isActive={isActive} onShow={onShow} />
 			{isActive ? fieldElements : undefined}
 		</fieldset>
