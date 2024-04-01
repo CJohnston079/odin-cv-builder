@@ -5,7 +5,16 @@ import "../styles/editor/Fieldset.css";
 
 export default function Fieldset({ heading, iconSrc, fields, isActive, onShow }) {
 	const fieldElements = fields.map(field => {
-		return <Field key={field.name} inputLabel={field.label} inputName={field.name} />;
+		const newField = (
+			<Field
+				key={field.name}
+				inputLabel={field.label}
+				inputName={field.name}
+				inputType={field.inputType}
+			/>
+		);
+
+		return newField;
 	});
 
 	return (

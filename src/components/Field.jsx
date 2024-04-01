@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import "../styles/editor/Field.css";
 
-export default function Field({ inputLabel, inputName }) {
+export default function Field({ inputLabel, inputName, inputType }) {
 	return (
 		<label>
 			{inputLabel}
-			<input name={inputName} />
+			<input name={inputName} type={inputType} />
 		</label>
 	);
 }
@@ -13,4 +13,5 @@ export default function Field({ inputLabel, inputName }) {
 Field.propTypes = {
 	inputLabel: PropTypes.string.isRequired,
 	inputName: PropTypes.string.isRequired,
+	inputType: PropTypes.string.isRequired,
 };

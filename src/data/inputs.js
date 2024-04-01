@@ -1,14 +1,12 @@
 export default {
 	contact: [
-		{ label: "First name", name: "forename" },
-		{ label: "Surname", name: "surname" },
-		{ label: "Email address", name: "email" },
-		{ label: "Phone number", name: "phone-number" },
+		{ inputType: "text", label: "First name", name: "forename", class: "" },
+		{ inputType: "text", label: "Surname", name: "surname", class: "" },
+		{ inputType: "text", label: "Job title", name: "job-title", class: "" },
+		{ inputType: "text", label: "Location", name: "website", class: "" },
+		{ inputType: "email", label: "Email address", name: "email", class: "" },
+		{ inputType: "tel", label: "Phone number", name: "phone-number", class: "" },
 	],
-	links: [
-		{ label: "Website", name: "website" },
-		{ label: "LinkedIn", name: "linkedin" },
-	],
-	summary: [{ label: "Professional summary", name: "summary" }],
-	sample: [{ label: "Sammple field", name: "sample" }],
+	summary: [{ inputType: "text", label: "Professional summary", name: "summary", class: "" }],
+	sample: [{ inputType: "text", label: "Sammple field", name: "sample", class: "" }],
 };
