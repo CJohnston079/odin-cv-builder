@@ -1,12 +1,20 @@
 export default {
 	contact: [
-		{ inputType: "text", label: "First name", name: "forename", class: "" },
-		{ inputType: "text", label: "Surname", name: "surname", class: "" },
-		{ inputType: "text", label: "Job title", name: "job-title", class: "" },
-		{ inputType: "text", label: "Location", name: "website", class: "" },
-		{ inputType: "email", label: "Email address", name: "email", class: "" },
-		{ inputType: "tel", label: "Phone number", name: "phone-number", class: "" },
+		{ inputType: "text", name: "forename", description: "First name", class: "" },
+		{ inputType: "text", name: "surname", description: "Surname", class: "" },
+		{ inputType: "text", name: "job-title", description: "Job title", class: "" },
+		{ inputType: "text", name: "website", description: "Location", class: "" },
+		{ inputType: "email", name: "email", description: "Email address", class: "" },
+		{ inputType: "tel", name: "phone-number", description: "Phone number", class: "" },
 	],
-	summary: [{ inputType: "text", label: "Professional summary", name: "summary", class: "" }],
-	sample: [{ inputType: "text", label: "Sammple field", name: "sample", class: "" }],
+	summary: [
+		{
+			inputType: "text",
+			name: "summary",
+			description:
+				"Outline your professional background in 2–5 sentences. Make sure to tailor your summary to the specific job you're applying for and highlight the key skills and experiences that align with the position's requirements.",
+			class: "",
+		},
+	],
+	sample: [{ inputType: "text", name: "sample", description: "Sammple field", class: "" }],
 };

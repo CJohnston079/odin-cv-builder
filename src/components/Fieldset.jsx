@@ -8,9 +8,9 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 		const newField = (
 			<Field
 				key={field.name}
-				inputLabel={field.label}
-				inputName={field.name}
 				inputType={field.inputType}
+				inputName={field.name}
+				description={field.description}
 			/>
 		);
 
@@ -30,7 +30,7 @@ Fieldset.propTypes = {
 	iconSrc: PropTypes.string.isRequired,
 	fields: PropTypes.arrayOf(
 		PropTypes.shape({
-			label: PropTypes.string.isRequired,
+			description: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
 		})
 	).isRequired,
