@@ -7,3 +7,12 @@ fieldset {
 	border-top: solid hsl(0, 0%, 80%) 1px;
 	padding: 0.5rem 0;
 }
+
+#personal-details {
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 2rem;
+}
+#personal-details .section-header {
+	grid-column: 1 / -1;
+}

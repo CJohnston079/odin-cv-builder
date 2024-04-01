@@ -1,5 +1,5 @@
 :root {
-	--base-hue: 220;
+	--base-hue: 240;
 
 	--cl-preview-bg-light: hsl(var(--base-hue), 30%, 60%);
 	--cl-preview-bg-dark: hsl(var(--base-hue), 30%, 40%);

@@ -4,7 +4,7 @@ label {
 	font-size: 0.8rem;
 	color: hsl(0, 0%, 50%);
 
-	margin: 0.5em auto;
+	margin: 0.5em 0;
 }
 
 input {
