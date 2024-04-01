@@ -9,11 +9,10 @@ export default {
 	],
 	summary: [
 		{
-			inputType: "text",
+			inputType: "text-area",
 			name: "summary",
 			description:
 				"Outline your professional background in 2–5 sentences. Make sure to tailor your summary to the specific job you're applying for and highlight the key skills and experiences that align with the position's requirements.",
-			class: "",
 		},
 	],
 	sample: [{ inputType: "text", name: "sample", description: "Sammple field", class: "" }],

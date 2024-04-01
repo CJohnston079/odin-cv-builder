@@ -7,7 +7,8 @@ label {
 	margin: 0.5em 0;
 }
 
-input {
+input,
+textarea {
 	margin: 0.5rem 0;
 	border: none;
 	border-radius: 2px;
@@ -16,4 +17,10 @@ input {
 	font-size: 1rem;
 
 	background-color: var(--cl-light-emphasis);
+}
+
+textarea {
+	padding: 1rem;
+	height: 12rem;
+	line-height: 1.5rem;
 }

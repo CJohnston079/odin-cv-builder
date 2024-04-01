@@ -34,6 +34,11 @@ button {
 	cursor: pointer;
 }
 
-input {
+input,
+textarea {
 	font-family: "Open Sans", sans-serif;
+}
+
+textarea {
+	resize: none;
 }
