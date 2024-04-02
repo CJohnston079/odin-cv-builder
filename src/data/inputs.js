@@ -13,7 +13,8 @@ export default {
 			name: "summary",
 			description:
 				"Outline your professional background in 2–5 sentences. Make sure to tailor your summary to the specific job you're applying for and highlight your key skills and experiences that align with the position's requirements.",
+			isShown: true,
 		},
 	],
-	sample: [{ inputType: "text", name: "sample", description: "Sammple field", class: "" }],
+	sample: [{ inputType: "text", name: "sample", description: "Sammple field", isShown: true }],
 };

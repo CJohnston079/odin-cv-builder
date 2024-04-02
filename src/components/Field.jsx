@@ -30,5 +30,5 @@ Field.propTypes = {
 };
 
 Field.defaultProps = {
-	isShown: false,
+	isShown: true,
 };
