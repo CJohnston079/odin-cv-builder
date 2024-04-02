@@ -16,5 +16,17 @@ export default {
 			isShown: true,
 		},
 	],
+	employment: [
+		{ inputType: "text", name: "job-title", description: "Job title" },
+		{ inputType: "text", name: "employers", description: "Employer" },
+		{ inputType: "date", name: "start-date", description: "Start date" },
+		{ inputType: "date", name: "end-date", description: "End date" },
+		{
+			inputType: "text-area",
+			name: "job-description",
+			description:
+				"Role description. Outline your responsibilities and accomplishmets you had in this role. Mention any specific skills you used in the role, particularly if they are relevant to the role you are applying for.",
+		},
+	],
 	sample: [{ inputType: "text", name: "sample", description: "Sammple field", isShown: true }],
 };

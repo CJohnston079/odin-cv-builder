@@ -26,7 +26,7 @@ export default function Editor() {
 				<Fieldset
 					heading="Employment history"
 					iconSrc="./src/assets/icons/employment.svg"
-					fields={inputs.sample}
+					fields={inputs.employment}
 					isActive={activeFieldset === 2}
 					onShow={() => setActiveFieldset(2)}
 				/>
