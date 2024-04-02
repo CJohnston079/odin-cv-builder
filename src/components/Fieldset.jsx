@@ -11,6 +11,7 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 				inputType={field.inputType}
 				inputName={field.name}
 				description={field.description}
+				isShown={field.isShown}
 			/>
 		);
 
