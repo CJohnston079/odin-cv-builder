@@ -11,9 +11,14 @@ fieldset {
 .section-fields {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	column-gap: 2rem;
+	gap: 1rem 2rem;
+	margin: 1rem 0;
+
+	/* border: solid 1px hsl(0, 0%, 90%);
+	border-radius: 5px;
+	padding: 1rem; */
 }
 
-/* #personal-details .section-header {
-	grid-column: 1 / -1;
-} */
+label:has(> textarea) {
+	grid-column: 1 / -1 !important;
+}
