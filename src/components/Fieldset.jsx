@@ -21,7 +21,11 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 	return (
 		<fieldset id={heading.toLowerCase().replaceAll(" ", "-")}>
 			<FieldsetHeader headerText={heading} iconSrc={iconSrc} isActive={isActive} onShow={onShow} />
-			{isActive && <div className="section-fields">{fieldElements}</div>}
+			<div
+				className={isActive ? "section-fields accordion-active" : "section-fields accordion-hidden"}
+			>
+				{fieldElements}
+			</div>{" "}
 		</fieldset>
 	);
 }
