@@ -9,8 +9,8 @@ export default function FieldsetHeader({ headerText, iconSrc, isActive, onShow }
 			<button type="button">
 				<img
 					src="./src/assets/icons/chevron.svg"
-					alt={!isActive ? "Expand section" : undefined}
-					title={!isActive ? "Expand section" : undefined}
+					alt={!isActive ? "Expand section" : "Collapse section"}
+					title={!isActive ? "Expand section" : "Collapse section"}
 					style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)" }}
 				/>
 			</button>

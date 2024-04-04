@@ -6,6 +6,10 @@ import "../styles/editor/Editor.css";
 export default function Editor() {
 	const [activeFieldset, setActiveFieldset] = useState(0);
 
+	const handleSetActiveFieldset = index => {
+		setActiveFieldset(activeFieldset === index ? null : index);
+	};
+
 	return (
 		<section id="editor">
 			<form>
@@ -14,49 +18,49 @@ export default function Editor() {
 					iconSrc="./src/assets/icons/profile.svg"
 					fields={inputs.contact}
 					isActive={activeFieldset === 0}
-					onShow={() => setActiveFieldset(0)}
+					onShow={() => handleSetActiveFieldset(0)}
 				/>
 				<Fieldset
 					heading="Professional summary"
 					iconSrc="./src/assets/icons/summary.svg"
 					fields={inputs.summary}
 					isActive={activeFieldset === 1}
-					onShow={() => setActiveFieldset(1)}
+					onShow={() => handleSetActiveFieldset(1)}
 				/>
 				<Fieldset
 					heading="Employment history"
 					iconSrc="./src/assets/icons/employment.svg"
 					fields={inputs.employment}
 					isActive={activeFieldset === 2}
-					onShow={() => setActiveFieldset(2)}
+					onShow={() => handleSetActiveFieldset(2)}
 				/>
 				<Fieldset
 					heading="Education"
 					iconSrc="./src/assets/icons/education.svg"
 					fields={inputs.sample}
 					isActive={activeFieldset === 3}
-					onShow={() => setActiveFieldset(3)}
+					onShow={() => handleSetActiveFieldset(3)}
 				/>
 				<Fieldset
 					heading="Skills"
 					iconSrc="./src/assets/icons/skills.svg"
 					fields={inputs.sample}
 					isActive={activeFieldset === 4}
-					onShow={() => setActiveFieldset(4)}
+					onShow={() => handleSetActiveFieldset(4)}
 				/>
 				<Fieldset
 					heading="Other interests"
 					iconSrc="./src/assets/icons/interests.svg"
 					fields={inputs.sample}
 					isActive={activeFieldset === 5}
-					onShow={() => setActiveFieldset(5)}
+					onShow={() => handleSetActiveFieldset(5)}
 				/>
 				<Fieldset
 					heading="References"
 					iconSrc="./src/assets/icons/references.svg"
 					fields={inputs.sample}
 					isActive={activeFieldset === 6}
-					onShow={() => setActiveFieldset(6)}
+					onShow={() => handleSetActiveFieldset(6)}
 				/>
 			</form>
 		</section>
