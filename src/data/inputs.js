@@ -18,7 +18,7 @@ export default {
 	],
 	employment: [
 		{ inputType: "text", name: "job-title", description: "Job title" },
-		{ inputType: "text", name: "employers", description: "Employer" },
+		{ inputType: "text", name: "employer", description: "Employer" },
 		{ inputType: "date", name: "start-date", description: "Start date" },
 		{ inputType: "date", name: "end-date", description: "End date" },
 		{
@@ -27,6 +27,12 @@ export default {
 			description:
 				"Role description. Outline your responsibilities and accomplishmets you had in this role. Mention any specific skills you used in the role, particularly if they are relevant to the role you are applying for.",
 		},
+	],
+	education: [
+		{ inputType: "text", name: "course-name", description: "Course name" },
+		{ inputType: "text", name: "institution", description: "Institution" },
+		{ inputType: "date", name: "start-date", description: "Course start date" },
+		{ inputType: "date", name: "end-date", description: "Course end date" },
 	],
 	sample: [{ inputType: "text", name: "sample", description: "Sammple field", isShown: true }],
 };

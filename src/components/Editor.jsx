@@ -37,7 +37,7 @@ export default function Editor() {
 				<Fieldset
 					heading="Education"
 					iconSrc="./src/assets/icons/education.svg"
-					fields={inputs.sample}
+					fields={inputs.education}
 					isActive={activeFieldset === 3}
 					onShow={() => handleSetActiveFieldset(3)}
 				/>
