@@ -10,6 +10,20 @@ export default function Editor() {
 		setActiveFieldset(activeFieldset === index ? null : index);
 	};
 
+	const handleNext = () => {
+		const totalFieldsets = document.querySelector("form").children.length;
+
+		setActiveFieldset(prevActiveFieldset =>
+			prevActiveFieldset === totalFieldsets - 1 ? prevActiveFieldset : prevActiveFieldset + 1
+		);
+	};
+
+	const handlePrevious = () => {
+		setActiveFieldset(prevActiveFieldset =>
+			prevActiveFieldset === 0 ? prevActiveFieldset : prevActiveFieldset - 1
+		);
+	};
+
 	return (
 		<section id="editor">
 			<form>
@@ -63,6 +77,10 @@ export default function Editor() {
 					onShow={() => handleSetActiveFieldset(6)}
 				/>
 			</form>
+			<div>
+				<button onClick={handlePrevious}>Previous</button>
+				<button onClick={handleNext}>Next</button>
+			</div>
 		</section>
 	);
 }
