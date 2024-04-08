@@ -77,7 +77,7 @@ export default function Editor() {
 					onShow={() => handleSetActiveFieldset(6)}
 				/>
 			</form>
-			<div>
+			<div id="nav-buttons">
 				<button onClick={handlePrevious}>Previous</button>
 				<button onClick={handleNext}>Next</button>
 			</div>

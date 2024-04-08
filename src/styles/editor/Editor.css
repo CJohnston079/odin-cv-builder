@@ -1,3 +1,21 @@
+#editor > * {
+	--editor-child-padding: 4rem;
+
+	padding: var(--editor-child-padding);
+}
+
 form {
-	padding: 2rem;
+	min-height: 100vh;
+}
+
+#nav-buttons {
+	position: sticky;
+	bottom: 0;
+
+	display: flex;
+	justify-content: space-between;
+
+	padding: 2rem 4rem;
+
+	background-color: white;
 }

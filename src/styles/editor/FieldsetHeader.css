@@ -17,7 +17,7 @@ h2 {
 	color: var(--cl-text); */
 }
 
-button {
+.section-header button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
