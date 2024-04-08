@@ -78,8 +78,14 @@ export default function Editor() {
 				/>
 			</form>
 			<div id="nav-buttons">
-				<button onClick={handlePrevious}>Previous</button>
-				<button onClick={handleNext}>Next</button>
+				<button id="previous-section" onClick={handlePrevious}>
+					Previous
+					<span className="button-subheading">Previous section</span>
+				</button>
+				<button id="next-section" onClick={handleNext}>
+					Next
+					<span className="button-subheading">Next section</span>
+				</button>
 			</div>
 		</section>
 	);

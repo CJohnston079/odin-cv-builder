@@ -19,3 +19,22 @@ form {
 
 	background-color: white;
 }
+
+#previous-section,
+#next-section {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+#previous-section {
+	text-align: left;
+}
+
+#next-section {
+	text-align: right;
+}
+
+.button-subheading {
+	display: block;
+	font-weight: normal;
+}
