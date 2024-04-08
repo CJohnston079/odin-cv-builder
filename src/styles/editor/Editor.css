@@ -15,9 +15,10 @@ form {
 	display: flex;
 	justify-content: space-between;
 
-	padding: 2rem 4rem;
+	padding-top: 2rem;
+	border-top: solid 1px hsl(0, 0%, 90%);
 
-	background-color: white;
+	background-color: hsl(0, 0%, 100%);
 }
 
 #previous-section,
@@ -37,4 +38,5 @@ form {
 .button-subheading {
 	display: block;
 	font-weight: normal;
+	color: hsl(0, 0%, 50%);
 }
