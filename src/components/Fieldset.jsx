@@ -3,7 +3,7 @@ import Field from "./Field";
 import FieldsetHeader from "./FieldsetHeader";
 import "../styles/editor/Fieldset.css";
 
-export default function Fieldset({ heading, iconSrc, fields, isActive, onShow }) {
+export default function Fieldset({ heading, fields, isActive, onShow }) {
 	const fieldElements = fields.map(field => {
 		const newField = (
 			<Field
@@ -19,8 +19,13 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 	});
 
 	return (
-		<fieldset id={heading.toLowerCase().replaceAll(" ", "-")}>
-			<FieldsetHeader headerText={heading} iconSrc={iconSrc} isActive={isActive} onShow={onShow} />
+		<fieldset id={heading.text.toLowerCase().replaceAll(" ", "-")}>
+			<FieldsetHeader
+				headerText={heading.text}
+				iconSrc={heading.iconSrc}
+				isActive={isActive}
+				onShow={onShow}
+			/>
 			<div
 				className={isActive ? "section-fields accordion-active" : "section-fields accordion-hidden"}
 			>
@@ -31,8 +36,7 @@ export default function Fieldset({ heading, iconSrc, fields, isActive, onShow })
 }
 
 Fieldset.propTypes = {
-	heading: PropTypes.string.isRequired,
-	iconSrc: PropTypes.string.isRequired,
+	heading: PropTypes.object.isRequired,
 	fields: PropTypes.arrayOf(
 		PropTypes.shape({
 			description: PropTypes.string.isRequired,

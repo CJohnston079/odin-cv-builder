@@ -28,50 +28,43 @@ export default function Editor() {
 		<section id="editor">
 			<form>
 				<Fieldset
-					heading="Personal details"
-					iconSrc="./src/assets/icons/profile.svg"
+					heading={{ text: "Personal details", iconSrc: "./src/assets/icons/profile.svg" }}
 					fields={inputs.contact}
 					isActive={activeFieldset === 0}
 					onShow={() => handleSetActiveFieldset(0)}
 				/>
 				<Fieldset
-					heading="Professional summary"
-					iconSrc="./src/assets/icons/summary.svg"
+					heading={{ text: "Professional summary", iconSrc: "./src/assets/icons/summary.svg" }}
 					fields={inputs.summary}
 					isActive={activeFieldset === 1}
 					onShow={() => handleSetActiveFieldset(1)}
 				/>
 				<Fieldset
-					heading="Employment history"
-					iconSrc="./src/assets/icons/employment.svg"
+					heading={{ text: "Employment history", iconSrc: "./src/assets/icons/employment.svg" }}
 					fields={inputs.employment}
 					isActive={activeFieldset === 2}
 					onShow={() => handleSetActiveFieldset(2)}
 				/>
 				<Fieldset
-					heading="Education"
-					iconSrc="./src/assets/icons/education.svg"
+					heading={{ text: "Education", iconSrc: "./src/assets/icons/education.svg" }}
 					fields={inputs.education}
 					isActive={activeFieldset === 3}
 					onShow={() => handleSetActiveFieldset(3)}
 				/>
 				<Fieldset
-					heading="Skills"
-					iconSrc="./src/assets/icons/skills.svg"
+					heading={{ text: "Skills", iconSrc: "./src/assets/icons/skills.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 4}
 					onShow={() => handleSetActiveFieldset(4)}
 				/>
 				<Fieldset
-					heading="Other interests"
-					iconSrc="./src/assets/icons/interests.svg"
+					heading={{ text: "Other interests", iconSrc: "./src/assets/icons/interests.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 5}
 					onShow={() => handleSetActiveFieldset(5)}
 				/>
 				<Fieldset
-					heading="References"
-					iconSrc="./src/assets/icons/references.svg"
+					heading={{ text: "References", iconSrc: "./src/assets/icons/references.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 6}
 					onShow={() => handleSetActiveFieldset(6)}
