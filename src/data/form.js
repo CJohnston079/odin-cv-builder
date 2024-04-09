@@ -8,6 +8,10 @@ export default {
 			{ inputType: "text", name: "website", description: "Location", isShown: true },
 			{ inputType: "email", name: "email", description: "Email address", isShown: true },
 			{ inputType: "tel", name: "phone-number", description: "Phone number", isShown: true },
+			{ inputType: "text", name: "website", description: "Website", isShown: false },
+			{ inputType: "text", name: "address", description: "Address", isShown: false },
+			{ inputType: "text", name: "linkedin", description: "LinkedIn", isShown: false },
+			{ inputType: "text", name: "github", description: "GitHub", isShown: false },
 		],
 	},
 	summary: {
