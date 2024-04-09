@@ -23,6 +23,7 @@
 	--foreground-color: var(--cl-light-grey);
 	--midground-color: var(--cl-lighter-grey);
 	--emphasis-color: var(--cl-light-emphasis);
+	--icon-filter: invert(0);
 
 	font-family: "Open Sans", sans-serif;
 	line-height: 1.5;
@@ -46,6 +47,7 @@
 		--foreground-color: var(--cl-black);
 		--midground-color: var(--cl-darker-grey);
 		--emphasis-color: var(--cl-dark-emphasis);
+		--icon-filter: invert(1);
 	}
 }
 
