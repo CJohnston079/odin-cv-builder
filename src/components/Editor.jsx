@@ -28,43 +28,43 @@ export default function Editor() {
 		<section id="editor">
 			<form>
 				<Fieldset
-					heading={{ text: "Personal details", iconSrc: "./src/assets/icons/profile.svg" }}
+					header={{ heading: "Personal details", iconSrc: "./src/assets/icons/profile.svg" }}
 					fields={inputs.contact}
 					isActive={activeFieldset === 0}
 					onShow={() => handleSetActiveFieldset(0)}
 				/>
 				<Fieldset
-					heading={{ text: "Professional summary", iconSrc: "./src/assets/icons/summary.svg" }}
+					header={{ heading: "Professional summary", iconSrc: "./src/assets/icons/summary.svg" }}
 					fields={inputs.summary}
 					isActive={activeFieldset === 1}
 					onShow={() => handleSetActiveFieldset(1)}
 				/>
 				<Fieldset
-					heading={{ text: "Employment history", iconSrc: "./src/assets/icons/employment.svg" }}
+					header={{ heading: "Employment history", iconSrc: "./src/assets/icons/employment.svg" }}
 					fields={inputs.employment}
 					isActive={activeFieldset === 2}
 					onShow={() => handleSetActiveFieldset(2)}
 				/>
 				<Fieldset
-					heading={{ text: "Education", iconSrc: "./src/assets/icons/education.svg" }}
+					header={{ heading: "Education", iconSrc: "./src/assets/icons/education.svg" }}
 					fields={inputs.education}
 					isActive={activeFieldset === 3}
 					onShow={() => handleSetActiveFieldset(3)}
 				/>
 				<Fieldset
-					heading={{ text: "Skills", iconSrc: "./src/assets/icons/skills.svg" }}
+					header={{ heading: "Skills", iconSrc: "./src/assets/icons/skills.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 4}
 					onShow={() => handleSetActiveFieldset(4)}
 				/>
 				<Fieldset
-					heading={{ text: "Other interests", iconSrc: "./src/assets/icons/interests.svg" }}
+					header={{ heading: "Other interests", iconSrc: "./src/assets/icons/interests.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 5}
 					onShow={() => handleSetActiveFieldset(5)}
 				/>
 				<Fieldset
-					heading={{ text: "References", iconSrc: "./src/assets/icons/references.svg" }}
+					header={{ heading: "References", iconSrc: "./src/assets/icons/references.svg" }}
 					fields={inputs.sample}
 					isActive={activeFieldset === 6}
 					onShow={() => handleSetActiveFieldset(6)}

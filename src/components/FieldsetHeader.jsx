@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import "../styles/editor/FieldsetHeader.css";
 
-export default function FieldsetHeader({ headerText, iconSrc, isActive, onShow }) {
+export default function FieldsetHeader({ header, isActive, onShow }) {
 	return (
 		<div className="section-header" onClick={onShow}>
-			<img className="icon" src={iconSrc} />
-			<h2>{headerText}</h2>
+			<img className="icon" src={header.iconSrc} />
+			<h2>{header.heading}</h2>
 			<button type="button">
 				<img
 					src="./src/assets/icons/chevron.svg"
@@ -20,8 +20,7 @@ export default function FieldsetHeader({ headerText, iconSrc, isActive, onShow }
 }
 
 FieldsetHeader.propTypes = {
-	headerText: PropTypes.string.isRequired,
-	iconSrc: PropTypes.string.isRequired,
+	header: PropTypes.object.isRequired,
 	isActive: PropTypes.bool.isRequired,
 	onShow: PropTypes.func.isRequired,
 };
