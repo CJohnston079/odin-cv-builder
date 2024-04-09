@@ -4,7 +4,7 @@
 
 fieldset {
 	border: none;
-	border-top: solid hsl(0, 0%, 80%) 1px;
+	border-top: solid var(--foreground-color) 1px;
 	padding: 0.5rem 0;
 }
 

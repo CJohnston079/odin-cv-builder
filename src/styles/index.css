@@ -1,22 +1,52 @@
 :root {
 	--base-hue: 240;
 
+	--cl-white: hsl(0, 0%, 100%);
+	--cl-black: hsl(0, 0%, 0%);
+	--cl-mid-grey: hsl(0, 0%, 50%);
+	--cl-mid-lighter-grey: hsl(0, 0%, 65%);
+	--cl-lighter-grey: hsl(0, 0%, 95%);
+	--cl-light-grey: hsl(0, 0%, 80%);
+	--cl-dark-grey: hsl(0, 0%, 20%);
+	--cl-darker-grey: hsl(0, 0%, 10%);
+
+	--cl-emphasis: hsl(var(--base-hue), 100%, 50%);
+	--cl-light-emphasis: hsl(var(--base-hue), 25%, 95%);
+	--cl-dark-emphasis: hsl(var(--base-hue), 10%, 10%);
+
 	--cl-preview-bg-light: hsl(var(--base-hue), 30%, 60%);
 	--cl-preview-bg-dark: hsl(var(--base-hue), 30%, 40%);
-	--cl-light-emphasis: hsl(var(--base-hue), 25%, 95%);
+
+	--text-color: var(--cl-black);
+	--text-color-mid: var(--cl-mid-grey);
+	--background-color: var(--cl-white);
+	--foreground-color: var(--cl-light-grey);
+	--midground-color: var(--cl-lighter-grey);
+	--emphasis-color: var(--cl-light-emphasis);
 
 	font-family: "Open Sans", sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
 	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	color: var(--text-color);
+	background-color: var(--background-color);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: var(--cl-white);
+		--text-color-mid: var(--cl-mid-lighter-grey);
+		--background-color: var(--cl-dark-grey);
+		--foreground-color: var(--cl-black);
+		--midground-color: var(--cl-darker-grey);
+		--emphasis-color: var(--cl-dark-emphasis);
+	}
 }
 
 @font-face {
@@ -29,14 +59,4 @@
 	font-family: "Open Sans";
 	src: url(../assets/fonts/open-sans/OpenSans-Italic-VariableFont.ttf) format("truetype");
 	font-style: italic;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
 }

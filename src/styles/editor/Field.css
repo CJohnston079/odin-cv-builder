@@ -2,7 +2,7 @@ label {
 	display: grid;
 
 	font-size: 0.8rem;
-	color: hsl(0, 0%, 50%);
+	color: var(--text-color-mid);
 }
 
 input,
@@ -14,7 +14,7 @@ textarea {
 
 	font-size: 1rem;
 
-	background-color: var(--cl-light-emphasis);
+	background-color: var(--emphasis-color);
 }
 
 textarea {

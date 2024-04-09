@@ -16,9 +16,9 @@ form {
 	justify-content: space-between;
 
 	padding-top: 2rem;
-	border-top: solid 1px hsl(0, 0%, 90%);
+	border-top: solid 1px var(--foreground-color);
 
-	background-color: hsl(0, 0%, 100%);
+	background-color: var(--background-color);
 }
 
 #previous-section,
@@ -38,5 +38,5 @@ form {
 .button-subheading {
 	display: block;
 	font-weight: normal;
-	color: hsl(0, 0%, 50%);
+	color: var(--text-color-mid);
 }
