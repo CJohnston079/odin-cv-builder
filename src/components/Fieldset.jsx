@@ -28,9 +28,7 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 	return (
 		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
 			<FieldsetHeader header={header} isActive={isActive} onShow={onShow} />
-			<div
-				className={isActive ? "section-fields accordion-active" : "section-fields accordion-hidden"}
-			>
+			<div className={`section-fields ${isActive ? "accordion-active" : "accordion-hidden"}`}>
 				{fieldElements}
 				<ToggleBonusFields
 					toggleBonusFields={toggleBonusFields}
