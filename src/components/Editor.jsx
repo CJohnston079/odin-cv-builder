@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Fieldset from "./Fieldset";
-import inputs from "../data/inputs";
+import form from "../data/form";
 import "../styles/editor/Editor.css";
 
 export default function Editor() {
@@ -28,44 +28,44 @@ export default function Editor() {
 		<section id="editor">
 			<form>
 				<Fieldset
-					header={{ heading: "Personal details", iconSrc: "./src/assets/icons/profile.svg" }}
-					fields={inputs.contact}
+					header={form.contact.header}
+					fields={form.contact.inputs}
 					isActive={activeFieldset === 0}
 					onShow={() => handleSetActiveFieldset(0)}
 				/>
 				<Fieldset
-					header={{ heading: "Professional summary", iconSrc: "./src/assets/icons/summary.svg" }}
-					fields={inputs.summary}
+					header={form.summary.header}
+					fields={form.summary.inputs}
 					isActive={activeFieldset === 1}
 					onShow={() => handleSetActiveFieldset(1)}
 				/>
 				<Fieldset
-					header={{ heading: "Employment history", iconSrc: "./src/assets/icons/employment.svg" }}
-					fields={inputs.employment}
+					header={form.employment.header}
+					fields={form.employment.inputs}
 					isActive={activeFieldset === 2}
 					onShow={() => handleSetActiveFieldset(2)}
 				/>
 				<Fieldset
-					header={{ heading: "Education", iconSrc: "./src/assets/icons/education.svg" }}
-					fields={inputs.education}
+					header={form.education.header}
+					fields={form.education.inputs}
 					isActive={activeFieldset === 3}
 					onShow={() => handleSetActiveFieldset(3)}
 				/>
 				<Fieldset
-					header={{ heading: "Skills", iconSrc: "./src/assets/icons/skills.svg" }}
-					fields={inputs.sample}
+					header={form.skills.header}
+					fields={form.skills.inputs}
 					isActive={activeFieldset === 4}
 					onShow={() => handleSetActiveFieldset(4)}
 				/>
 				<Fieldset
-					header={{ heading: "Other interests", iconSrc: "./src/assets/icons/interests.svg" }}
-					fields={inputs.sample}
+					header={form.interests.header}
+					fields={form.interests.inputs}
 					isActive={activeFieldset === 5}
 					onShow={() => handleSetActiveFieldset(5)}
 				/>
 				<Fieldset
-					header={{ heading: "References", iconSrc: "./src/assets/icons/references.svg" }}
-					fields={inputs.sample}
+					header={form.references.header}
+					fields={form.references.inputs}
 					isActive={activeFieldset === 6}
 					onShow={() => handleSetActiveFieldset(6)}
 				/>
