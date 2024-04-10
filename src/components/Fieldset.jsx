@@ -25,18 +25,18 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 
 	const defaultFields = fields.filter(field => !field.optional);
 	const bonusFields = fields.filter(field => field.optional);
-
 	const fieldElements = defaultFields.map(createField);
 	const bonusFieldElements = bonusFields.map(createField);
+
+	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
 
 	return (
 		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
 			<FieldsetHeader header={header} isActive={isActive} onShow={onShow} />
-			<div className={`accordion ${isActive ? "accordion-active" : "accordion-hidden"}`}>
+
+			<div className={`accordion ${accordionCondition(isActive)}`}>
 				<div className="section-fields">{fieldElements}</div>
-				<div
-					className={`section-fields ${bonusFieldsShown ? "accordion-active" : "accordion-hidden"}`}
-				>
+				<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
 					{bonusFieldElements}
 				</div>
 				{bonusFields.length > 0 && (
