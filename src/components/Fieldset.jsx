@@ -12,7 +12,7 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 		setBonusFieldsShown(!bonusFieldsShown);
 	};
 
-	const createField = function (field) {
+	const createField = field => {
 		return (
 			<Field
 				key={field.name}
