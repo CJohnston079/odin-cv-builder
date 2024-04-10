@@ -10,7 +10,7 @@
 	--cl-dark-grey: hsl(0, 0%, 20%);
 	--cl-darker-grey: hsl(0, 0%, 10%);
 
-	--cl-emphasis: hsl(var(--base-hue), 100%, 50%);
+	--cl-emphasis: hsl(var(--base-hue), 25%, 50%);
 	--cl-light-emphasis: hsl(var(--base-hue), 25%, 95%);
 	--cl-dark-emphasis: hsl(var(--base-hue), 10%, 10%);
 
@@ -23,6 +23,7 @@
 	--foreground-color: var(--cl-light-grey);
 	--midground-color: var(--cl-lighter-grey);
 	--emphasis-color: var(--cl-light-emphasis);
+	--emphasis-bold-color: var(--cl-emphasis);
 	--icon-filter: invert(0);
 
 	font-family: "Open Sans", sans-serif;

@@ -67,8 +67,8 @@ const ToggleBonusFields = function ({ toggleBonusFields, bonusFieldsShown }) {
 	};
 
 	return (
-		<button type="button" onClick={handleClick}>
-			{bonusFieldsShown ? "Hide additional fields" : "Show additional fields"}
+		<button className="toggle-bonus-fields" type="button" onClick={handleClick}>
+			{bonusFieldsShown ? "Hide additional fields -" : "Show additional fields +"}
 		</button>
 	);
 };

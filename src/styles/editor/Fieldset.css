@@ -12,7 +12,7 @@ fieldset {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem 2rem;
-	margin: 1rem 0;
+	margin-bottom: 1rem;
 
 	overflow: hidden;
 	transition: max-height 400ms, margin 400ms;
@@ -23,6 +23,8 @@ fieldset {
 }
 
 .accordion {
+	margin: 1rem 0;
+
 	overflow: hidden;
 	transition: max-height 400ms, margin 400ms;
 }
@@ -33,9 +35,23 @@ fieldset {
 }
 
 .accordion-active {
-	max-height: 100vmax;
+	max-height: 1600px;
 }
 
 label:has(> textarea) {
 	grid-column: 1 / -1 !important;
+}
+
+.toggle-bonus-fields {
+	margin: 0;
+	padding: 0;
+
+	font-weight: bold;
+	color: var(--emphasis-bold-color);
+
+	transition: filter 400ms;
+}
+
+.toggle-bonus-fields:hover {
+	filter: brightness(0.5);
 }
