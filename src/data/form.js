@@ -29,25 +29,26 @@ export default {
 	employment: {
 		header: { heading: "Employment history", iconSrc: "./src/assets/icons/employment.svg" },
 		inputs: [
-			{ inputType: "text", name: "job-title", description: "Job title" },
-			{ inputType: "text", name: "employer", description: "Employer" },
-			{ inputType: "date", name: "start-date", description: "Start date" },
-			{ inputType: "date", name: "end-date", description: "End date" },
+			{ inputType: "text", name: "job-title", description: "Job title", isShown: true },
+			{ inputType: "text", name: "employer", description: "Employer", isShown: true },
+			{ inputType: "date", name: "start-date", description: "Start date", isShown: true },
+			{ inputType: "date", name: "end-date", description: "End date", isShown: true },
 			{
 				inputType: "text-area",
 				name: "job-description",
 				description:
 					"Role description. Outline your responsibilities and accomplishmets you had in this role. Mention any specific skills you used in the role, particularly if they are relevant to the role you are applying for.",
+				isShown: true,
 			},
 		],
 	},
 	education: {
 		header: { heading: "Education", iconSrc: "./src/assets/icons/education.svg" },
 		inputs: [
-			{ inputType: "text", name: "course-name", description: "Course name" },
-			{ inputType: "text", name: "institution", description: "Institution" },
-			{ inputType: "date", name: "start-date", description: "Course start date" },
-			{ inputType: "date", name: "end-date", description: "Course end date" },
+			{ inputType: "text", name: "course-name", description: "Course name", isShown: true },
+			{ inputType: "text", name: "institution", description: "Institution", isShown: true },
+			{ inputType: "date", name: "start-date", description: "Course start date", isShown: true },
+			{ inputType: "date", name: "end-date", description: "Course end date", isShown: true },
 		],
 	},
 	skills: {

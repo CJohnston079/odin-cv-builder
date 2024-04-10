@@ -11,25 +11,47 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 		setBonusFieldsShown(!bonusFieldsShown);
 	};
 
-	const fieldElements = fields.map(field => {
-		const newField = (
-			<Field
-				key={field.name}
-				inputType={field.inputType}
-				inputName={field.name}
-				description={field.description}
-				isShown={field.isShown || bonusFieldsShown}
-			/>
-		);
+	const fieldElements = fields
+		.filter(field => field.isShown)
+		.map(field => {
+			const newField = (
+				<Field
+					key={field.name}
+					inputType={field.inputType}
+					inputName={field.name}
+					description={field.description}
+				/>
+			);
 
-		return newField;
-	});
+			return newField;
+		});
+
+	const bonusFieldElements = fields
+		.filter(field => !field.isShown)
+		.map(field => {
+			const newField = (
+				<Field
+					key={field.name}
+					inputType={field.inputType}
+					inputName={field.name}
+					description={field.description}
+					// isShown={field.isShown || bonusFieldsShown}
+				/>
+			);
+
+			return newField;
+		});
 
 	return (
 		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
 			<FieldsetHeader header={header} isActive={isActive} onShow={onShow} />
-			<div className={`section-fields ${isActive ? "accordion-active" : "accordion-hidden"}`}>
-				{fieldElements}
+			<div className={`accordion ${isActive ? "accordion-active" : "accordion-hidden"}`}>
+				<div className="section-fields">{fieldElements}</div>
+				<div
+					className={`section-fields ${bonusFieldsShown ? "accordion-active" : "accordion-hidden"}`}
+				>
+					{bonusFieldElements}
+				</div>
 				<ToggleBonusFields
 					toggleBonusFields={toggleBonusFields}
 					bonusFieldsShown={bonusFieldsShown}

@@ -14,12 +14,17 @@ fieldset {
 	gap: 1rem 2rem;
 	margin: 1rem 0;
 
-	transition: max-height 400ms, margin 400ms;
 	overflow: hidden;
+	transition: max-height 400ms, margin 400ms;
 
 	/* border: solid 1px hsl(0, 0%, 90%);
 	border-radius: 5px;
 	padding: 1rem; */
+}
+
+.accordion {
+	overflow: hidden;
+	transition: max-height 400ms, margin 400ms;
 }
 
 .accordion-hidden {
