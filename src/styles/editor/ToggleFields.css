@@ -1,0 +1,13 @@
+.toggle-bonus-fields {
+	margin: 0;
+	padding: 0;
+
+	font-weight: bold;
+	color: var(--emphasis-bold-color);
+
+	transition: filter 400ms;
+}
+
+.toggle-bonus-fields:hover {
+	filter: brightness(0.5);
+}
