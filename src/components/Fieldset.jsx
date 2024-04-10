@@ -12,19 +12,8 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 		setBonusFieldsShown(!bonusFieldsShown);
 	};
 
-	const requiredFields = [];
-	const optionalFields = [];
-
-	for (const field of fields) {
-		if (field.optional) {
-			optionalFields.push(field);
-		} else {
-			requiredFields.push(field);
-		}
-	}
-
-	const fieldElements = requiredFields.map(field => {
-		const newField = (
+	const createField = function (field) {
+		return (
 			<Field
 				key={field.name}
 				inputType={field.inputType}
@@ -32,22 +21,13 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 				description={field.description}
 			/>
 		);
+	};
 
-		return newField;
-	});
+	const defaultFields = fields.filter(field => !field.optional);
+	const bonusFields = fields.filter(field => field.optional);
 
-	const bonusFieldElements = optionalFields.map(field => {
-		const newField = (
-			<Field
-				key={field.name}
-				inputType={field.inputType}
-				inputName={field.name}
-				description={field.description}
-			/>
-		);
-
-		return newField;
-	});
+	const fieldElements = defaultFields.map(createField);
+	const bonusFieldElements = bonusFields.map(createField);
 
 	return (
 		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
