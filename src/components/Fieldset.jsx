@@ -39,7 +39,9 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 				>
 					{bonusFieldElements}
 				</div>
-				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
+				{bonusFields.length > 0 && (
+					<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
+				)}
 			</div>
 		</fieldset>
 	);
