@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import FieldsetHeader from "./FieldsetHeader";
 import Field from "./Field";
+import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 import "../styles/editor/Fieldset.css";
 
@@ -13,8 +14,10 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 	};
 
 	const createField = field => {
+		const Component = field.inputType === "text-area" ? TextArea : Field;
+
 		return (
-			<Field
+			<Component
 				key={field.name}
 				inputType={field.inputType}
 				inputName={field.name}

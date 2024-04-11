@@ -2,18 +2,10 @@ import PropTypes from "prop-types";
 import "../styles/editor/Field.css";
 
 export default function Field({ inputType, inputName, description }) {
-	let inputElement;
-
-	if (inputType === "text-area") {
-		inputElement = <textarea name={inputName} />;
-	} else {
-		inputElement = <input type={inputType} name={inputName} />;
-	}
-
 	return (
 		<label>
 			{description}
-			{inputElement}
+			<input type={inputType} name={inputName} />
 		</label>
 	);
 }
