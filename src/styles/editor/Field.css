@@ -22,3 +22,8 @@ textarea {
 	height: 12rem;
 	line-height: 1.5rem;
 }
+
+.word-count {
+	margin-top: 0.5rem;
+	text-align: right;
+}
