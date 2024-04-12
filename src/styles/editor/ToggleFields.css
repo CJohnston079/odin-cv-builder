@@ -1,4 +1,6 @@
+.add-fields,
 .toggle-bonus-fields {
+	display: block;
 	margin: 0;
 	padding: 0;
 
@@ -8,6 +10,7 @@
 	transition: filter 400ms;
 }
 
+.add-fields:hover,
 .toggle-bonus-fields:hover {
 	filter: brightness(0.5);
 }

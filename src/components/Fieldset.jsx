@@ -4,6 +4,7 @@ import FieldsetHeader from "./FieldsetHeader";
 import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
+import AddFields from "./AddFields";
 import "../styles/editor/Fieldset.css";
 
 export default function Fieldset({ header, fields, isActive, onShow }) {
@@ -11,6 +12,10 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 
 	const toggleBonusFields = () => {
 		setBonusFieldsShown(!bonusFieldsShown);
+	};
+
+	const addFields = () => {
+		alert("time to add new fields");
 	};
 
 	const createField = field => {
@@ -44,6 +49,9 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 				</div>
 				{bonusFields.length > 0 && (
 					<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
+				)}
+				{header.heading !== "Personal details" && header.heading !== "Professional summary" && (
+					<AddFields addFieldsFunc={addFields} />
 				)}
 			</div>
 		</fieldset>
