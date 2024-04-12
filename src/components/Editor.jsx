@@ -1,25 +1,25 @@
 import { useState } from "react";
-import Fieldset from "./Fieldset";
+import FormSection from "./FormSection";
 import form from "../data/form";
 import "../styles/editor/Editor.css";
 
 export default function Editor() {
-	const [activeFieldset, setActiveFieldset] = useState(0);
+	const [activeSection, setActiveSection] = useState(0);
 
-	const handleSetActiveFieldset = index => {
-		setActiveFieldset(activeFieldset === index ? null : index);
+	const handleSetActiveSection = index => {
+		setActiveSection(activeSection === index ? null : index);
 	};
 
 	const handleNext = () => {
 		const totalFieldsets = document.querySelector("form").children.length;
 
-		setActiveFieldset(prevActiveFieldset =>
+		setActiveSection(prevActiveFieldset =>
 			prevActiveFieldset === totalFieldsets - 1 ? prevActiveFieldset : prevActiveFieldset + 1
 		);
 	};
 
 	const handlePrevious = () => {
-		setActiveFieldset(prevActiveFieldset =>
+		setActiveSection(prevActiveFieldset =>
 			prevActiveFieldset === 0 ? prevActiveFieldset : prevActiveFieldset - 1
 		);
 	};
@@ -27,47 +27,47 @@ export default function Editor() {
 	return (
 		<section id="editor">
 			<form>
-				<Fieldset
+				<FormSection
 					header={form.contact.header}
 					fields={form.contact.inputs}
-					isActive={activeFieldset === 0}
-					onShow={() => handleSetActiveFieldset(0)}
+					isActive={activeSection === 0}
+					onShow={() => handleSetActiveSection(0)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.summary.header}
 					fields={form.summary.inputs}
-					isActive={activeFieldset === 1}
-					onShow={() => handleSetActiveFieldset(1)}
+					isActive={activeSection === 1}
+					onShow={() => handleSetActiveSection(1)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.employment.header}
 					fields={form.employment.inputs}
-					isActive={activeFieldset === 2}
-					onShow={() => handleSetActiveFieldset(2)}
+					isActive={activeSection === 2}
+					onShow={() => handleSetActiveSection(2)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.education.header}
 					fields={form.education.inputs}
-					isActive={activeFieldset === 3}
-					onShow={() => handleSetActiveFieldset(3)}
+					isActive={activeSection === 3}
+					onShow={() => handleSetActiveSection(3)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.skills.header}
 					fields={form.skills.inputs}
-					isActive={activeFieldset === 4}
-					onShow={() => handleSetActiveFieldset(4)}
+					isActive={activeSection === 4}
+					onShow={() => handleSetActiveSection(4)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.interests.header}
 					fields={form.interests.inputs}
-					isActive={activeFieldset === 5}
-					onShow={() => handleSetActiveFieldset(5)}
+					isActive={activeSection === 5}
+					onShow={() => handleSetActiveSection(5)}
 				/>
-				<Fieldset
+				<FormSection
 					header={form.references.header}
 					fields={form.references.inputs}
-					isActive={activeFieldset === 6}
-					onShow={() => handleSetActiveFieldset(6)}
+					isActive={activeSection === 6}
+					onShow={() => handleSetActiveSection(6)}
 				/>
 			</form>
 			<div id="nav-buttons">

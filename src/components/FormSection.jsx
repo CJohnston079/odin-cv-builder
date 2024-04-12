@@ -7,7 +7,7 @@ import ToggleFields from "./ToggleFields";
 import AddFields from "./AddFields";
 import "../styles/editor/Fieldset.css";
 
-export default function Fieldset({ header, fields, isActive, onShow }) {
+export default function FormSection({ header, fields, isActive, onShow }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 
 	const toggleBonusFields = () => {
@@ -16,6 +16,12 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 
 	const addFields = () => {
 		alert("time to add new fields");
+
+		const parentElement = document.querySelector("add-fields").parentNode;
+		const newDiv = document.createElement("div");
+		newDiv.className = "section-fields";
+		newDiv.textContent = "test";
+		parentElement.appendChild(newDiv);
 	};
 
 	const createField = field => {
@@ -58,7 +64,7 @@ export default function Fieldset({ header, fields, isActive, onShow }) {
 	);
 }
 
-Fieldset.propTypes = {
+FormSection.propTypes = {
 	header: PropTypes.object.isRequired,
 	fields: PropTypes.arrayOf(
 		PropTypes.shape({
