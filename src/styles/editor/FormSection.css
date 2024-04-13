@@ -2,8 +2,7 @@
 	--cl-text: hsl(0, 0%, 20%);
 }
 
-fieldset {
-	border: none;
+.form-section {
 	border-top: solid var(--foreground-color) 1px;
 	padding: 0.5rem 0;
 }

@@ -45,10 +45,10 @@ export default function FormSection({ header, fields, isActive, onShow }) {
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
 
 	return (
-		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
+		<div id={header.heading.toLowerCase().replaceAll(" ", "-")} className="form-section">
 			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
 
-			<div className={`accordion ${accordionCondition(isActive)}`}>
+			<fieldset className={`accordion ${accordionCondition(isActive)}`}>
 				<div className="section-fields">{fieldElements}</div>
 				<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
 					{bonusFieldElements}
@@ -59,8 +59,8 @@ export default function FormSection({ header, fields, isActive, onShow }) {
 				{header.heading !== "Personal details" && header.heading !== "Professional summary" && (
 					<AddFields addFieldsFunc={addFields} />
 				)}
-			</div>
-		</fieldset>
+			</fieldset>
+		</div>
 	);
 }
 
