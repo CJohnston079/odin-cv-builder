@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import "../styles/editor/FieldsetHeader.css";
+import "../styles/editor/SectionHeader.css";
 
-export default function FieldsetHeader({ header, isActive, onShow }) {
+export default function SectionHeader({ header, isActive, onShow }) {
 	return (
 		<div className="section-header" onClick={onShow}>
 			<img className="icon" src={header.iconSrc} />
@@ -19,12 +19,12 @@ export default function FieldsetHeader({ header, isActive, onShow }) {
 	);
 }
 
-FieldsetHeader.propTypes = {
+SectionHeader.propTypes = {
 	header: PropTypes.object.isRequired,
 	isActive: PropTypes.bool.isRequired,
 	onShow: PropTypes.func.isRequired,
 };
 
-FieldsetHeader.defaultProps = {
+SectionHeader.defaultProps = {
 	headerText: "Section",
 };

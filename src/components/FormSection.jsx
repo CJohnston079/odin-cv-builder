@@ -1,11 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import FieldsetHeader from "./FieldsetHeader";
+import SectionHeader from "./SectionHeader";
 import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 import AddFields from "./AddFields";
-import "../styles/editor/Fieldset.css";
+import "../styles/editor/FormSection.css";
 
 export default function FormSection({ header, fields, isActive, onShow }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
@@ -46,7 +46,7 @@ export default function FormSection({ header, fields, isActive, onShow }) {
 
 	return (
 		<fieldset id={header.heading.toLowerCase().replaceAll(" ", "-")}>
-			<FieldsetHeader header={header} isActive={isActive} onShow={onShow} />
+			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
 
 			<div className={`accordion ${accordionCondition(isActive)}`}>
 				<div className="section-fields">{fieldElements}</div>
