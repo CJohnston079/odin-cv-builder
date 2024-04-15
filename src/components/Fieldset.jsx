@@ -6,7 +6,7 @@ import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 
-export default function Fieldset({ fields, isActive }) {
+export default function Fieldset({ fieldsetId, fields, isActive }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 
 	const toggleBonusFields = () => {
@@ -52,12 +52,15 @@ export default function Fieldset({ fields, isActive }) {
 			{bonusFields.length > 0 && (
 				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
 			)}
-			<AddFields addFieldsFunc={addFields} />
+			{fieldsetId !== "personal-details" && fieldsetId !== "professional-summary" && (
+				<AddFields addFieldsFunc={addFields} />
+			)}
 		</fieldset>
 	);
 }
 
 Fieldset.propTypes = {
+	fieldsetId: PropTypes.string.isRequired,
 	fields: PropTypes.arrayOf(
 		PropTypes.shape({
 			description: PropTypes.string.isRequired,

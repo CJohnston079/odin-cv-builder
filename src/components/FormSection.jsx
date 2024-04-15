@@ -9,7 +9,7 @@ export default function FormSection({ header, fields, isActive, onShow }) {
 	return (
 		<div id={id} className="form-section">
 			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
-			<Fieldset fields={fields} isActive={isActive} />
+			<Fieldset fieldsetId={id} fields={fields} isActive={isActive} />
 		</div>
 	);
 }
