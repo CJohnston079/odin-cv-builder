@@ -4,8 +4,10 @@ import Fieldset from "./Fieldset";
 import "../styles/editor/FormSection.css";
 
 export default function FormSection({ header, fields, isActive, onShow }) {
+	const id = header.heading.toLowerCase().replaceAll(" ", "-");
+
 	return (
-		<div id={header.heading.toLowerCase().replaceAll(" ", "-")} className="form-section">
+		<div id={id} className="form-section">
 			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
 			<Fieldset fields={fields} isActive={isActive} />
 		</div>
