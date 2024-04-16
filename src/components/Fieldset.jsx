@@ -14,13 +14,13 @@ export default function Fieldset({ fieldsetId, fields, isActive }) {
 	};
 
 	const addFields = () => {
-		alert("time to add new fields");
+		// alert("time to add new fields");
 
-		const parentElement = document.querySelector("add-fields").parentNode;
+		const parentElement = document.querySelector(`#${fieldsetId} fieldset`);
 		const newDiv = document.createElement("div");
 		newDiv.className = "section-fields";
 		newDiv.textContent = "test";
-		parentElement.appendChild(newDiv);
+		parentElement.insertBefore(newDiv, parentElement.lastChild);
 	};
 
 	const createField = field => {
