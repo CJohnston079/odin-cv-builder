@@ -15,10 +15,12 @@
 
 	overflow: hidden;
 	transition: max-height 400ms, margin 400ms;
+}
 
-	/* border: solid 1px hsl(0, 0%, 90%);
+.subsection {
+	border: solid 1px var(--foreground-color);
 	border-radius: 5px;
-	padding: 1rem; */
+	padding: 1rem;
 }
 
 .accordion {
