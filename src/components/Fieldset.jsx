@@ -43,18 +43,18 @@ export default function Fieldset({ fieldsetId, fields, isActive }) {
 
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
 
+	const hasSubsections = fieldsetId !== "personal-details" && fieldsetId !== "professional-summary";
+
 	return (
 		<fieldset className={`accordion ${accordionCondition(isActive)}`}>
-			<div className="section-fields">{fieldElements}</div>
+			<div className={`section-fields ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
 			<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
 				{bonusFieldElements}
 			</div>
 			{bonusFields.length > 0 && (
 				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
 			)}
-			{fieldsetId !== "personal-details" && fieldsetId !== "professional-summary" && (
-				<AddFields addFieldsFunc={addFields} />
-			)}
+			{hasSubsections && <AddFields addFieldsFunc={addFields} />}
 		</fieldset>
 	);
 }
