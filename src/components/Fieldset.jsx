@@ -8,19 +8,22 @@ import ToggleFields from "./ToggleFields";
 
 export default function Fieldset({ fieldsetId, fields, isActive }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
+	const [children, setChildren] = useState([]);
+
+	const addFields = () => {
+		setChildren(prevChildren => [
+			...prevChildren,
+			<div
+				key={prevChildren.length}
+				className={`section-fields ${hasSubsections ? "subsection" : ""}`}
+			>
+				{fieldElements}
+			</div>,
+		]);
+	};
 
 	const toggleBonusFields = () => {
 		setBonusFieldsShown(!bonusFieldsShown);
-	};
-
-	const addFields = () => {
-		// alert("time to add new fields");
-
-		const parentElement = document.querySelector(`#${fieldsetId} fieldset`);
-		const newDiv = document.createElement("div");
-		newDiv.className = "section-fields";
-		newDiv.textContent = "test";
-		parentElement.insertBefore(newDiv, parentElement.lastChild);
 	};
 
 	const createField = field => {
@@ -48,6 +51,7 @@ export default function Fieldset({ fieldsetId, fields, isActive }) {
 	return (
 		<fieldset className={`accordion ${accordionCondition(isActive)}`}>
 			<div className={`section-fields ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
+			{children}
 			<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
 				{bonusFieldElements}
 			</div>
