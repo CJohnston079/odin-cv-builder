@@ -11,7 +11,7 @@ export default function Editor() {
 	};
 
 	const handleNext = () => {
-		const totalFieldsets = document.querySelector("form").children.length;
+		const totalFieldsets = Object.keys(form).length;
 
 		setActiveSection(prevActiveFieldset =>
 			prevActiveFieldset === totalFieldsets - 1 ? prevActiveFieldset : prevActiveFieldset + 1
