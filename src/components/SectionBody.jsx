@@ -6,7 +6,7 @@ import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 
-export default function Fieldset({ inputData, isActive }) {
+export default function SectionBody({ inputData, isActive }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 	const [children, setChildren] = useState([]);
 
@@ -50,7 +50,7 @@ export default function Fieldset({ inputData, isActive }) {
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
 
 	return (
-		<fieldset className={`accordion ${accordionCondition(isActive)}`}>
+		<div className={`accordion ${accordionCondition(isActive)}`}>
 			<div className={`section-fields ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
 			{children}
 			<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
@@ -60,11 +60,11 @@ export default function Fieldset({ inputData, isActive }) {
 				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
 			)}
 			{hasSubsections && <AddFields addFieldsFunc={addFields} />}
-		</fieldset>
+		</div>
 	);
 }
 
-Fieldset.propTypes = {
+SectionBody.propTypes = {
 	inputData: PropTypes.object.isRequired,
 	isActive: PropTypes.bool.isRequired,
 };

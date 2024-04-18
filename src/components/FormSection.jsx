@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import SectionHeader from "./SectionHeader";
-import Fieldset from "./Fieldset";
+import SectionBody from "./SectionBody";
 import "../styles/editor/FormSection.css";
 
 export default function FormSection({ data, isActive, onShow }) {
@@ -10,7 +10,7 @@ export default function FormSection({ data, isActive, onShow }) {
 	return (
 		<div id={id} className="form-section">
 			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
-			<Fieldset inputData={inputData} isActive={isActive} />
+			<SectionBody inputData={inputData} isActive={isActive} />
 		</div>
 	);
 }
