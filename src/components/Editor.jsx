@@ -5,63 +5,37 @@ import "../styles/editor/Editor.css";
 
 export default function Editor() {
 	const [activeSection, setActiveSection] = useState(0);
+	const sections = Object.keys(form);
 
 	const handleSetActiveSection = index => {
 		setActiveSection(activeSection === index ? null : index);
 	};
 
 	const handleNext = () => {
-		const totalFieldsets = Object.keys(form).length;
+		const totalSections = sections.length;
 
-		setActiveSection(prevActiveFieldset =>
-			prevActiveFieldset === totalFieldsets - 1 ? prevActiveFieldset : prevActiveFieldset + 1
+		setActiveSection(prevActiveSection =>
+			prevActiveSection === totalSections - 1 ? prevActiveSection : prevActiveSection + 1
 		);
 	};
 
 	const handlePrevious = () => {
-		setActiveSection(prevActiveFieldset =>
-			prevActiveFieldset === 0 ? prevActiveFieldset : prevActiveFieldset - 1
+		setActiveSection(prevActiveSection =>
+			prevActiveSection === 0 ? prevActiveSection : prevActiveSection - 1
 		);
 	};
 
 	return (
 		<section id="editor">
 			<form>
-				<FormSection
-					data={form.contact}
-					isActive={activeSection === 0}
-					onShow={() => handleSetActiveSection(0)}
-				/>
-				<FormSection
-					data={form.summary}
-					isActive={activeSection === 1}
-					onShow={() => handleSetActiveSection(1)}
-				/>
-				<FormSection
-					data={form.employment}
-					isActive={activeSection === 2}
-					onShow={() => handleSetActiveSection(2)}
-				/>
-				<FormSection
-					data={form.education}
-					isActive={activeSection === 3}
-					onShow={() => handleSetActiveSection(3)}
-				/>
-				<FormSection
-					data={form.skills}
-					isActive={activeSection === 4}
-					onShow={() => handleSetActiveSection(4)}
-				/>
-				<FormSection
-					data={form.interests}
-					isActive={activeSection === 5}
-					onShow={() => handleSetActiveSection(5)}
-				/>
-				<FormSection
-					data={form.references}
-					isActive={activeSection === 6}
-					onShow={() => handleSetActiveSection(6)}
-				/>
+				{sections.map((section, index) => (
+					<FormSection
+						key={index}
+						data={form[section]}
+						isActive={activeSection === index}
+						onShow={() => handleSetActiveSection(index)}
+					/>
+				))}
 			</form>
 			<div id="nav-buttons">
 				<button id="previous-section" onClick={handlePrevious}>
