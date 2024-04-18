@@ -3,7 +3,9 @@ import SectionHeader from "./SectionHeader";
 import Fieldset from "./Fieldset";
 import "../styles/editor/FormSection.css";
 
-export default function FormSection({ header, fields, isActive, onShow }) {
+export default function FormSection({ data, isActive, onShow }) {
+	const header = data.header;
+	const fields = data.inputs;
 	const id = header.heading.toLowerCase().replaceAll(" ", "-");
 
 	return (
@@ -15,13 +17,7 @@ export default function FormSection({ header, fields, isActive, onShow }) {
 }
 
 FormSection.propTypes = {
-	header: PropTypes.object.isRequired,
-	fields: PropTypes.arrayOf(
-		PropTypes.shape({
-			description: PropTypes.string.isRequired,
-			name: PropTypes.string.isRequired,
-		})
-	).isRequired,
+	data: PropTypes.object.isRequired,
 	isActive: PropTypes.bool.isRequired,
 	onShow: PropTypes.func.isRequired,
 };

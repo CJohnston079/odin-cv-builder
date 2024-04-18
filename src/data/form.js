@@ -13,6 +13,7 @@ export default {
 			{ inputType: "text", name: "github", description: "GitHub", optional: true },
 			{ inputType: "text", name: "dribbble", description: "Dribbble", optional: true },
 		],
+		hasOptionalFields: true,
 	},
 	summary: {
 		header: { heading: "Professional summary", iconSrc: "./src/assets/icons/summary.svg" },
@@ -39,6 +40,7 @@ export default {
 					"Role description. Outline your responsibilities and accomplishmets you had in this role. Mention any specific skills you used in the role, particularly if they are relevant to the role you are applying for.",
 			},
 		],
+		hasSubsections: true,
 	},
 	education: {
 		header: { heading: "Education", iconSrc: "./src/assets/icons/education.svg" },
@@ -48,6 +50,7 @@ export default {
 			{ inputType: "date", name: "start-date", description: "Course start date" },
 			{ inputType: "date", name: "end-date", description: "Course end date" },
 		],
+		hasSubsections: true,
 	},
 	skills: {
 		header: { heading: "Skills", iconSrc: "./src/assets/icons/skills.svg" },

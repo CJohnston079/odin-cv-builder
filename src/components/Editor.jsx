@@ -28,44 +28,37 @@ export default function Editor() {
 		<section id="editor">
 			<form>
 				<FormSection
-					header={form.contact.header}
-					fields={form.contact.inputs}
+					data={form.contact}
 					isActive={activeSection === 0}
 					onShow={() => handleSetActiveSection(0)}
 				/>
 				<FormSection
-					header={form.summary.header}
-					fields={form.summary.inputs}
+					data={form.summary}
 					isActive={activeSection === 1}
 					onShow={() => handleSetActiveSection(1)}
 				/>
 				<FormSection
-					header={form.employment.header}
-					fields={form.employment.inputs}
+					data={form.employment}
 					isActive={activeSection === 2}
 					onShow={() => handleSetActiveSection(2)}
 				/>
 				<FormSection
-					header={form.education.header}
-					fields={form.education.inputs}
+					data={form.education}
 					isActive={activeSection === 3}
 					onShow={() => handleSetActiveSection(3)}
 				/>
 				<FormSection
-					header={form.skills.header}
-					fields={form.skills.inputs}
+					data={form.skills}
 					isActive={activeSection === 4}
 					onShow={() => handleSetActiveSection(4)}
 				/>
 				<FormSection
-					header={form.interests.header}
-					fields={form.interests.inputs}
+					data={form.interests}
 					isActive={activeSection === 5}
 					onShow={() => handleSetActiveSection(5)}
 				/>
 				<FormSection
-					header={form.references.header}
-					fields={form.references.inputs}
+					data={form.references}
 					isActive={activeSection === 6}
 					onShow={() => handleSetActiveSection(6)}
 				/>
