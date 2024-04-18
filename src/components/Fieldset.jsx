@@ -6,9 +6,11 @@ import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 
-export default function Fieldset({ fieldsetId, fields, isActive }) {
+export default function Fieldset({ inputData, isActive }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 	const [children, setChildren] = useState([]);
+
+	const fields = inputData.inputs;
 
 	const addFields = () => {
 		setChildren(prevChildren => [
@@ -43,10 +45,9 @@ export default function Fieldset({ fieldsetId, fields, isActive }) {
 	const bonusFields = fields.filter(field => field.optional);
 	const fieldElements = defaultFields.map(createField);
 	const bonusFieldElements = bonusFields.map(createField);
+	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
 
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
-
-	const hasSubsections = fieldsetId !== "personal-details" && fieldsetId !== "professional-summary";
 
 	return (
 		<fieldset className={`accordion ${accordionCondition(isActive)}`}>
@@ -64,12 +65,6 @@ export default function Fieldset({ fieldsetId, fields, isActive }) {
 }
 
 Fieldset.propTypes = {
-	fieldsetId: PropTypes.string.isRequired,
-	fields: PropTypes.arrayOf(
-		PropTypes.shape({
-			description: PropTypes.string.isRequired,
-			name: PropTypes.string.isRequired,
-		})
-	).isRequired,
+	inputData: PropTypes.object.isRequired,
 	isActive: PropTypes.bool.isRequired,
 };

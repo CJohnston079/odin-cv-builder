@@ -4,14 +4,13 @@ import Fieldset from "./Fieldset";
 import "../styles/editor/FormSection.css";
 
 export default function FormSection({ data, isActive, onShow }) {
-	const header = data.header;
-	const fields = data.inputs;
+	const { header, ...inputData } = data;
 	const id = header.heading.toLowerCase().replaceAll(" ", "-");
 
 	return (
 		<div id={id} className="form-section">
 			<SectionHeader header={header} isActive={isActive} onShow={onShow} />
-			<Fieldset fieldsetId={id} fields={fields} isActive={isActive} />
+			<Fieldset inputData={inputData} isActive={isActive} />
 		</div>
 	);
 }
