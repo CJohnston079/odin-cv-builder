@@ -50,7 +50,7 @@ export default function SectionBody({ inputData, isActive }) {
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
 
 	return (
-		<div className={`accordion ${accordionCondition(isActive)}`}>
+		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
 			<div className={`section-fields ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
 			{children}
 			<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
