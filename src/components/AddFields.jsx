@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-// import "../styles/editor/ToggleFields.css";
+import "../styles/editor/AddFields.css";
 
 export default function AddFields({ addFieldsFunc }) {
 	const handleClick = () => {

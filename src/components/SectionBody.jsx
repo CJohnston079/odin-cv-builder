@@ -1,19 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-
 import AddFields from "./AddFields";
-import Field from "./Field";
 import Fieldset from "./Fieldset";
-import TextArea from "./TextArea";
-import ToggleFields from "./ToggleFields";
-
 import "../styles/editor/SectionBody.css";
 
 export default function SectionBody({ inputData, isActive }) {
-	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 	const [children, setChildren] = useState([]);
-
-	const fields = inputData.inputs;
 
 	const addFields = () => {
 		setChildren(prevChildren => [
@@ -27,38 +19,15 @@ export default function SectionBody({ inputData, isActive }) {
 		]);
 	};
 
-	const toggleBonusFields = () => {
-		setBonusFieldsShown(!bonusFieldsShown);
-	};
-
-	const createField = field => {
-		const Component = field.inputType === "text-area" ? TextArea : Field;
-
-		return (
-			<Component
-				key={field.name}
-				inputType={field.inputType}
-				inputName={field.name}
-				description={field.description}
-			/>
-		);
-	};
-
-	const defaultFields = fields.filter(field => !field.optional);
-	const bonusFields = fields.filter(field => field.optional);
-	const bonusFieldElements = bonusFields.map(createField);
-	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
-
 	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
+
+	const defaultFields = inputData.inputs.filter(field => !field.optional);
+	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
 
 	return (
 		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
 			<Fieldset fields={defaultFields} isSubsection={hasSubsections} />
 			{children}
-			<div className={`fieldset ${accordionCondition(bonusFieldsShown)}`}>{bonusFieldElements}</div>
-			{bonusFields.length > 0 && (
-				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
-			)}
 			{hasSubsections && <AddFields addFieldsFunc={addFields} />}
 		</div>
 	);
