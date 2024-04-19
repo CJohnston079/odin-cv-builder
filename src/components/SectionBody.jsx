@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import AddFields from "./AddFields";
 import Field from "./Field";
+import Fieldset from "./Fieldset";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 
@@ -17,9 +18,12 @@ export default function SectionBody({ inputData, isActive }) {
 	const addFields = () => {
 		setChildren(prevChildren => [
 			...prevChildren,
-			<div key={prevChildren.length} className={`fieldset ${hasSubsections ? "subsection" : ""}`}>
-				{fieldElements}
-			</div>,
+			<Fieldset
+				className="test"
+				key={prevChildren.length}
+				fields={defaultFields}
+				isSubsection={true}
+			/>,
 		]);
 	};
 
@@ -42,7 +46,6 @@ export default function SectionBody({ inputData, isActive }) {
 
 	const defaultFields = fields.filter(field => !field.optional);
 	const bonusFields = fields.filter(field => field.optional);
-	const fieldElements = defaultFields.map(createField);
 	const bonusFieldElements = bonusFields.map(createField);
 	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
 
@@ -50,7 +53,7 @@ export default function SectionBody({ inputData, isActive }) {
 
 	return (
 		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
-			<div className={`fieldset ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
+			<Fieldset fields={defaultFields} isSubsection={hasSubsections} />
 			{children}
 			<div className={`fieldset ${accordionCondition(bonusFieldsShown)}`}>{bonusFieldElements}</div>
 			{bonusFields.length > 0 && (
