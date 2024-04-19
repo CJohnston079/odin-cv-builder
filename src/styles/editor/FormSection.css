@@ -6,39 +6,3 @@
 	border-top: solid var(--foreground-color) 1px;
 	padding: 0.5rem 0;
 }
-
-.section-fields {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem 2rem;
-	margin-bottom: 1rem;
-
-	overflow: hidden;
-	transition: max-height 400ms, margin 400ms;
-}
-
-.subsection {
-	border: solid 1px var(--foreground-color);
-	border-radius: 5px;
-	padding: 1rem;
-}
-
-.accordion {
-	margin: 1rem 0;
-
-	overflow: hidden;
-	transition: max-height 400ms, margin 400ms;
-}
-
-.accordion-hidden {
-	margin: 0;
-	max-height: 0;
-}
-
-.accordion-active {
-	max-height: 1600px;
-}
-
-label:has(> textarea) {
-	grid-column: 1 / -1 !important;
-}

@@ -6,6 +6,8 @@ import Field from "./Field";
 import TextArea from "./TextArea";
 import ToggleFields from "./ToggleFields";
 
+import "../styles/editor/SectionBody.css";
+
 export default function SectionBody({ inputData, isActive }) {
 	const [bonusFieldsShown, setBonusFieldsShown] = useState(false);
 	const [children, setChildren] = useState([]);
@@ -15,10 +17,7 @@ export default function SectionBody({ inputData, isActive }) {
 	const addFields = () => {
 		setChildren(prevChildren => [
 			...prevChildren,
-			<div
-				key={prevChildren.length}
-				className={`section-fields ${hasSubsections ? "subsection" : ""}`}
-			>
+			<div key={prevChildren.length} className={`fieldset ${hasSubsections ? "subsection" : ""}`}>
 				{fieldElements}
 			</div>,
 		]);
@@ -51,11 +50,9 @@ export default function SectionBody({ inputData, isActive }) {
 
 	return (
 		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
-			<div className={`section-fields ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
+			<div className={`fieldset ${hasSubsections ? "subsection" : ""}`}>{fieldElements}</div>
 			{children}
-			<div className={`section-fields ${accordionCondition(bonusFieldsShown)}`}>
-				{bonusFieldElements}
-			</div>
+			<div className={`fieldset ${accordionCondition(bonusFieldsShown)}`}>{bonusFieldElements}</div>
 			{bonusFields.length > 0 && (
 				<ToggleFields toggleFieldsFunc={toggleBonusFields} bonusFieldsShown={bonusFieldsShown} />
 			)}
