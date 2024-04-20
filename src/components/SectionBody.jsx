@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import AddFields from "./AddFields";
 import Fieldset from "./Fieldset";
+import Subsection from "./Subsection";
 import "../styles/editor/SectionBody.css";
 
 export default function SectionBody({ inputData, isActive }) {
@@ -23,10 +24,11 @@ export default function SectionBody({ inputData, isActive }) {
 
 	const defaultFields = inputData.inputs.filter(field => !field.optional);
 	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
+	const Component = hasSubsections ? Subsection : Fieldset;
 
 	return (
 		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
-			<Fieldset fields={defaultFields} isSubsection={hasSubsections} />
+			<Component fields={defaultFields} isSubsection={hasSubsections} />
 			{children}
 			{hasSubsections && <AddFields addFieldsFunc={addFields} />}
 		</div>
