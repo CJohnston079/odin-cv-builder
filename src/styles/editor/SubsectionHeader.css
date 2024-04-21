@@ -1,0 +1,15 @@
+.subsection-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info-text {
+	font-size: 0.8rem;
+	color: var(--text-color-mid);
+}
+
+.subsection-header .icon {
+	opacity: 0.5;
+	scale: 0.8;
+}

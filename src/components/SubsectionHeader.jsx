@@ -1,4 +1,5 @@
 // import PropTypes from "prop-types";
+import "../styles/editor/SubsectionHeader.css";
 
 export default function SubsectionHeader() {
 	return (

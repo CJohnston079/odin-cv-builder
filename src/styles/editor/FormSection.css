@@ -6,3 +6,9 @@
 	border-top: solid var(--foreground-color) 1px;
 	padding: 0.5rem 0;
 }
+
+.subsection {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
