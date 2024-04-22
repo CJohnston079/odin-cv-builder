@@ -1,16 +1,20 @@
 .add-fields,
 .toggle-bonus-fields {
-	display: block;
-	margin: 1rem 0 0 0;
-	padding: 0;
+	border: solid var(--foreground-color) 1px;
+	border-radius: 5px;
+	padding: 1rem;
+
+	width: 100%;
 
 	font-weight: bold;
+	text-align: left;
 	color: var(--emphasis-bold-color);
 
-	transition: filter 400ms;
+	transition: background-color 400ms, border-color 400ms;
 }
 
 .add-fields:hover,
 .toggle-bonus-fields:hover {
-	filter: brightness(0.5);
+	background-color: var(--emphasis-color);
+	border-color: var(--emphasis-color);
 }
