@@ -25,7 +25,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem 2rem;
-	margin-bottom: 1rem;
+	margin: 0;
 
 	overflow: hidden;
 	transition: max-height 400ms, margin 400ms;
