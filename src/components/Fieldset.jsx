@@ -4,7 +4,7 @@ import TextArea from "./TextArea";
 
 import "../styles/editor/SectionBody.css";
 
-export default function Fieldset({ fields, isSubsection }) {
+export default function Fieldset({ fields }) {
 	const createField = field => {
 		const Component = field.inputType === "text-area" ? TextArea : Field;
 
@@ -20,16 +20,9 @@ export default function Fieldset({ fields, isSubsection }) {
 
 	const fieldElements = fields.map(createField);
 
-	return (
-		<fieldset className={`fieldset ${isSubsection && "subsection"}`}>{fieldElements}</fieldset>
-	);
+	return <fieldset className={`fieldset`}>{fieldElements}</fieldset>;
 }
 
 Fieldset.propTypes = {
 	fields: PropTypes.array.isRequired,
-	isSubsection: PropTypes.bool,
-};
-
-Fieldset.defaultProps = {
-	isSubsection: false,
 };
