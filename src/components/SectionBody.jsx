@@ -10,19 +10,16 @@ export default function SectionBody({ inputData, isActive }) {
 	const hasSubsections = Object.hasOwn(inputData, "hasSubsections");
 	const Component = hasSubsections ? Subsection : Fieldset;
 
-	const accordionCondition = condition => `${condition ? "accordion-active" : "accordion-hidden"}`;
-
 	const [children, setChildren] = useState([<Component key={0} fields={defaultFields} />]);
 
 	const addFields = () => {
 		setChildren(prevChildren => {
-			console.log(prevChildren.length);
-			return [...prevChildren, <Subsection key={prevChildren.length} fields={defaultFields} />];
+			[...prevChildren, <Subsection key={prevChildren.length} fields={defaultFields} />];
 		});
 	};
 
 	return (
-		<div className={`section-body accordion ${accordionCondition(isActive)}`}>
+		<div className={`section-body accordion ${isActive ? "accordion-active" : "accordion-hidden"}`}>
 			{children}
 			{hasSubsections && <AddFields addFieldsFunc={addFields} />}
 		</div>
