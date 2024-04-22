@@ -15,6 +15,12 @@
 	overflow: scroll;
 }
 
+.section-body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
 .subsection {
 	border: solid 1px var(--foreground-color);
 	border-radius: 5px;
