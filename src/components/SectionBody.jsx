@@ -30,6 +30,15 @@ export default function SectionBody({ inputData, isActive }) {
 }
 
 SectionBody.propTypes = {
-	inputData: PropTypes.object.isRequired,
+	inputData: PropTypes.shape({
+		inputs: PropTypes.arrayOf(
+			PropTypes.shape({
+				inputType: PropTypes.string.isRequired,
+				name: PropTypes.string.isRequired,
+				description: PropTypes.string,
+			})
+		),
+		hasSubsections: PropTypes.bool,
+	}),
 	isActive: PropTypes.bool.isRequired,
 };
