@@ -13,9 +13,10 @@ export default function SectionBody({ inputData, isActive }) {
 	const [children, setChildren] = useState([<Component key={0} fields={defaultFields} />]);
 
 	const addFields = () => {
-		setChildren(prevChildren => {
-			[...prevChildren, <Subsection key={prevChildren.length} fields={defaultFields} />];
-		});
+		setChildren(prevChildren => [
+			...prevChildren,
+			<Subsection key={prevChildren.length} fields={defaultFields} />,
+		]);
 	};
 
 	return (
